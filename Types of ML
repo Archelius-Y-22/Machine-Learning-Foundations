@@ -1,0 +1,36 @@
+1- What are the Types of Machine Learning?
+Every Machine Learning problem falls into one of three major categories :
+Machine Learning
+│
+├── Supervised Learning
+│
+├── Unsupervised Learning
+│
+└── Reinforcement Learning
+
+2- What is the Goal of Machine Learning?
+The goal is always :
+Learn a function (or mapping) from data.
+
+We usually write this as :
+f(X) = Y is the general concept. [For example y = wx + b for the Linear Regression].
+- f = Model
+- X = Input (features)
+- Y = Output (prediction)
+
+Example :
+[Input]
+Age = 25
+Salary = 60000
+Experience = 4
+↓
+Model
+↓
+[Output]
+Approved = Yes
+
+=> The model learns how to map the inputs to the correct output.
+
+3- The Difference Between the Three Types (Supervised/Unsupervised/Reinforcement]?
+    a- Supervised Learning : 
+       
