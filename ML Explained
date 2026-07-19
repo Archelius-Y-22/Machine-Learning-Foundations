@@ -115,3 +115,38 @@ Hired = Yes
 
 => Now it can compare.
 
+10- What is a Training Data?
+Training data contains
+Features + Correct Answers [So the model can learn from it].
+
+Example
+
+Age	    Salary	    Hired
+22	    30000	    No
+35	    80000	    Yes
+28	    45000	    No
+
+The computer learns from them.
+
+11- What is an Algorithm?
+An algorithm is simply a method or procedure for solving a problem.
+
+Examples:
+- Sorting algorithm
+- Searching algorithm
+- Compression algorithm
+- Machine Learning algorithm
+
+Machine Learning algorithms have one job :
+=> Learn patterns from data.
+
+Examples include:
+- Linear Regression
+- Decision Tree
+- Random Forest
+- Neural Network
+- K-Means
+- Support Vector Machine
+
+=> These are all different learning algorithms.
+
