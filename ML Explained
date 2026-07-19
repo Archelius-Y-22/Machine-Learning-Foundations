@@ -150,3 +150,128 @@ Examples include:
 
 => These are all different learning algorithms.
 
+12- What Happens During Training?
+Imagine we have data.
+Dataset
+↓
+The learning algorithm starts.
+↓
+It makes predictions.
+↓
+Those predictions are wrong.
+↓
+It measures how wrong they are.
+↓
+It changes itself slightly.
+↓
+It predicts again.
+↓
+Still wrong.
+↓
+Changes again.
+↓
+Repeats thousands or millions of times.
+
+Eventually the predictions become much better.
+This entire process is called training.
+
+13- What is an AI Model?
+A Machine Learning algorithm creates the model.
+After training, the algorithm is finished.
+What remains is the model.
+
+A model is simply :
+The learned mathematical representation of the patterns in the data.
+
+You can think of it as a giant function.
+Input
+↓
+Model
+↓
+Prediction
+
+=> The model contains everything it learned during training.
+
+14- What are Parameters?
+Inside every model are numbers called parameters.
+
+Initially :
+Parameter A = random
+Parameter B = random
+Parameter C = random
+
+Training changes them.
+
+Eventually they become
+Parameter A = learned
+Parameter B = learned
+Parameter C = learned
+
+=> The model is essentially just a collection of learned parameters.
+
+For example, a simple linear regression model looks like this : [y = wx + b]
+- x: input feature
+- w: weight (parameter)
+- b: bias (parameter)
+- y: prediction
+At the start, [w] and [b] are random. During training, the algorithm adjusts them until the predictions become as accurate as possible.
+
+15- What is a prediction?
+After training,
+we stop teaching.
+
+Now someone gives
+[New Data]
+↓
+The model produces
+[Prediction]
+
+This is called "Inference".
+Training = Learning.
+Inference = Using what was learned.
+
+16- The Workflow of Machine Learning?
+1. Collect data
+↓
+2. Clean the data
+↓
+3. Choose an ML algorithm (K-Means, ..)
+↓
+4. Train the algorithm
+↓
+5. The algorithm learns patterns
+↓
+6. A trained model is produced
+↓
+7. Save the model
+↓
+8. Give the model new data
+↓
+9. The model makes predictions
+
+17- Why Different Algorithms Exist?
+You might wonder :
+If all algorithms learn from data, why are there so many?
+Because different problems have different structures.
+- Some algorithms are good for predicting numbers (regression),
+- Some for choosing categories (classification), 
+- Some for grouping similar data (clustering),
+- Some for learning very complex patterns (neural networks).
+
+=> Choosing the right algorithm depends on the problem you're solving.
+
+
+
+Resume (The Complete Pipeline) : 
+The most important concept to remember is this sequence:
+Data
+   ↓
+Algorithm
+   ↓
+Training
+   ↓
+Model
+   ↓
+Prediction
+
+Everything in Machine Learning revolves around this pipeline.
