@@ -1,0 +1,117 @@
+A machine is dumb, it only follows instructions we give.
+Let us discuss this scenario, we want from a system to conclude wether an email is a spam or not, we write a simple program that defines whether an email is spam or is not a spam.
+We start for example by this simple program that defines those set of rules :
+if "FREE" in email:
+    spam = True
+if sender in blacklist:
+    spam = True
+if links > 10:
+    spam = True
+The problem is when a spam comes in other format out of those rules, those rules fail to define that this is email is a spam.
+So we add more and more rules, so it becomes thousands of rules. -> Maintaining them becomes impossible.
+[Some problems simply cannot be solved well by manually writing every rule.]
+This is where Machine Learning comes in!
+
+1- The big idea behind Machine Learning : 
+Instead of writing the rules ourselves...
+We let the computer discover the rules.
+Instead of:
+[Developer -> Writes Rules -> Computer]
+We do:
+[Developer -> Provides Data -> Machine Learning Algorithm -> Learns Rules Automatically]
+=> We never typed the rules.The algorithm figured them out.
+
+2- What Does "Learning" Mean?
+This word confuses many beginners.
+The computer is not becoming intelligent.
+It is not understanding.
+Learning simply means:
+Finding patterns inside data.
+That's all!
+
+3- What is Data?
+Data is just information.
+Suppose we have a table.
+
+Hours Studied	  Passed
+2	              No
+4	              No
+5	              Yes
+7	              Yes
+8	              Yes
+
+This table is data.
+Each row is one example.
+Each column is one piece of information.
+
+4- What is a Dataset?
+A collection of many examples is called a dataset.
+A dataset is simply a table of information.
+
+5- What is a Sample (Observation)?
+One row of the dataset is called a sample or observation.
+Example:
+
+Hours Studied	  Passed
+7	              Yes
+
+This single row is one sample.
+Think:
+Dataset = Entire table.
+Sample = One row.
+
+6- What is a Feature?
+Look again.
+
+Hours Studied	  Passed
+7	              Yes
+
+Which information are we giving the computer?
+Hours Studied.
+This is called a feature.
+A feature is simply an input variable.
+Another example:
+
+Age	  Salary	  Experience	  Hired
+25    185k      15            Yes
+
+Features are :
+Age
+Salary
+Experience
+because these are given to the computer.
+
+7- What is a Label (Target)?
+Now look at
+(Hired) or (Passed).
+This is the answer.
+This is what we want the computer to predict.
+It is called
+- Label
+- Target
+- Output
+These three terms are often used interchangeably.
+
+8- Input VS Output?
+Every Machine Learning problem looks like this:
+Input
+   ↓
+Model
+   ↓
+Output
+- Inputs are called [Features].
+- Outputs are called [Labels].
+
+9- Why do we need both Features(Inputs) and Labels(Outputs) at first when training a model?
+Imagine teaching a model.
+If we only give
+Age
+Salary
+Experience
+How will it know whether its answer is correct? [It won't].
+
+During training we also give
+Hired = Yes
+
+=> Now it can compare.
+
