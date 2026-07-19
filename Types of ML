@@ -33,4 +33,31 @@ Approved = Yes
 
 3- The Difference Between the Three Types (Supervised/Unsupervised/Reinforcement]?
     a- Supervised Learning : 
-       
+       Input: Features (X) + Correct labels (y)
+       Goal: Learn a function f(X) → y that predicts the correct output.
+       Training: The model compares its prediction to the true label and minimizes the error (loss).
+
+        Example data:
+
+        X                  y
+        [5.2, 3.1]    ->   Cat
+        [6.7, 2.8]    ->   Dog
+
+        The labels (Cat, Dog) are provided.
+
+    b- Unsupervised Learning : 
+       Input: Features (X) only
+       Goal: Discover hidden structure in the data (clusters, patterns, relationships).    
+       Training: There are no labels and no "correct answer."
+
+        Example data:
+
+        X
+        [5.2, 3.1]
+        [6.7, 2.8]
+        [5.0, 3.0]
+
+        The algorithm might decide:
+        Cluster 1
+        Cluster 2
+        It creates these groups itself.
