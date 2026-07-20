@@ -277,7 +277,12 @@ To train a Model and feed it Data, we first do those steps, in our case we do us
     model = AutoModelForCausalLM.from_pretrained("meta-llama/Llama-2-7b")
     => Done.
     => Everything downloads automatically.
-    ----------------------------------------------------------------------------------------------
+    ---------------------------------------------------------------------------------------------------
+    Final : 
+    Hugging Face is a platform where developers can find and download pretrained AI models like Llama 2. 
+    It also provides libraries, such as Transformers, that make it easy to load those models into Python 
+    and use or fine-tune them without having to build everything from scratch.
+    ----------------------------------------------------------------------------------------------------
 
     o- What is PyTorch? 
 
