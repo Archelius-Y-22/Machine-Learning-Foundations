@@ -1,0 +1,43 @@
+1- What is CIC-IDS2017?
+
+CIC-IDS2017 is a Dataset used for cybersecurity research.
+CIC-IDS2017 is a collection of examples of normal and malicious network activity, used to train AI models to detect cyberattacks.
+
+2- What does CIC-IDS2017 contain?
+
+It contains records of computer communication called network traffic.
+
+CIC-IDS2017 contains examples of :
+
+Normal traffic (Benign)
+Examples :
+- Browsing websites.
+- Sending files.
+- Normal user activity.
+
+Attack traffic (Malicious)
+Examples :
+- DDoS attack (Many computers send traffic to overload a server).
+- Brute force attack (Someone repeatedly tries passwords until they find the correct one).
+- Port scanning (Someone checks which doors (ports) of a computer are open).
+- Botnet activity (A group of infected computers controlled by an attacker).
+- Web attacks (Attacks targeting websites).
+
+3- Why do we use this Dataset?
+
+Because collecting real hacker attacks ourselves would be :
+- Difficult.
+- Dangerous.
+- Unrealistic.
+So researchers use datasets like CIC-IDS2017 because they already contain examples of different attacks with labels.
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------
+What is CIC-IDS2017?
+
+CIC-IDS2017 is a publicly available cybersecurity dataset containing labeled examples of network traffic. 
+It includes both normal activity and different types of cyberattacks such as DDoS, brute force, and port scanning. 
+We used it to train and evaluate our model so it could learn the difference between legitimate and malicious network behavior.
+------------------------------------------------------------------------------------------------------------------------------
