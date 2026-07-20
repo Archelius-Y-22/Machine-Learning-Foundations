@@ -1,0 +1,68 @@
+1- Binary Classification?
+
+"Binary" means two choices.
+
+Example :
+
+Network traffic
+↓
+Model
+↓
+Benign
+
+or
+
+Network traffic
+↓
+Model
+↓
+Malicious
+
+=> Only two possible outputs.
+
+Like this :
+
+Input	          Output
+Traffic A	      Benign
+Traffic B	      Malicious
+
+=> That's binary classification.
+
+2- Multi-class Classification?
+
+Instead of just saying "malicious,"
+the model says what type of attack it is.
+
+Example :
+Traffic
+↓
+Model
+↓
+DDoS
+
+Another example :
+Traffic
+↓
+Model
+↓
+Port Scan
+
+Another :
+Traffic
+↓
+Model
+↓
+Botnet
+
+=> Now there are many possible answers.
+
+Example :
+
+Input	          Output
+Traffic A	      Benign
+Traffic B	      DDoS
+Traffic C	      Botnet
+Traffic D	      Port Scan
+Traffic E	      Brute Force
+
+=> That's called multi-class classification.
