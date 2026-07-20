@@ -1,0 +1,63 @@
+1- What is Hugging Face?
+
+Hugging Face is a platform + a set of Python tools that make it easy to download, use, and train AI models.
+
+2- What problem does Hugging Face solve?
+
+Imagine you want to use Llama 2.
+
+Without Hugging Face, you would have to :
+
+- Find the model files.
+- Download many large files.
+- Know how the files are organized.
+- Write code to load the model.
+- Prepare the text processing.
+- Handle many technical details.
+
+=> That is annoying.
+=> Hugging Face makes it much easier.
+
+3- Think of Hugging Face like an app store for AI models.
+
+Hugging Face → gives you AI models.
+You download a model.
+Your Python program loads it.
+You use it.
+
+Example :
+
+- You search for : [Llama 2] on Hugging Face.
+- You find the model.
+- Then in Python :
+  model = AutoModel.from_pretrained("Llama-2")
+
+Hugging Face downloads the model and prepares it.
+
+4- What does Hugging Face actually do?
+
+Let's say you have Llama 2.
+
+Your code says :
+model = AutoModelForCausalLM.from_pretrained("Llama-2")
+
+Behind the scenes :
+
+Step 1 :
+Hugging Face connects to its website (the Hub).
+↓
+Step 2 :
+It downloads the model files.
+Those files contain :
+- The Model Structure.
+- The weights.
+- The configuration.
+↓
+Step 3 :
+It loads the model into your computer's memory.
+↓
+Step 4 :
+It gives the model to PyTorch.
+↓
+Step 5 :
+PyTorch runs the calculations.
