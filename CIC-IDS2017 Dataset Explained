@@ -41,3 +41,5 @@ CIC-IDS2017 is a publicly available cybersecurity dataset containing labeled exa
 It includes both normal activity and different types of cyberattacks such as DDoS, brute force, and port scanning. 
 We used it to train and evaluate our model so it could learn the difference between legitimate and malicious network behavior.
 ------------------------------------------------------------------------------------------------------------------------------
+
+=> This is Called a Supervised Learning, cause we are taking a ready to implement Dataset containing Features + Labels (Outputs).
