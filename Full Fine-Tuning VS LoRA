@@ -1,0 +1,23 @@
+1- Full Fine-Tuning?
+
+Imagine Llama has 7 billion weights.
+Full fine-tuning changes all 7 billion.
+=> Very expensive.
+=> Needs powerful GPUs.
+
+2- LoRA?
+
+Instead of changing everything,
+LoRA changes only a tiny part.
+Think of it like this.
+Original book with 1000 pages.
+Need cybersecurity knowledge.
+Would you rewrite all 1000 pages?
+No.
+You add a small appendix.
+=> That's LoRA.
+
+3- Why use LoRA instead of Full Fine-Tuning?
+
+We used LoRA because updating all the model parameters would require much more computational power. 
+LoRA lets us fine-tune the model efficiently by training only a small number of additional parameters.
