@@ -1,0 +1,26 @@
+1- What is Preprocessing?
+
+Imagine you have this Dataset.
+Duration	  Packets	  Bytes	  Label
+15          10        512     DDoS
+But
+
+- Some rows are duplicated
+- Some columns aren't useful
+- Some values are missing
+
+=> We clean it.
+=> Maybe we :
+
+- Removed duplicates
+- Removed useless columns
+- Filled missing values
+
+=> That's preprocessing.
+
+2- Why do we use Preprocessing?
+
+Now imagine preprocessing took 10 minutes.
+We improved our code.
+Now it takes 7 minutes.
+=> That's 30% faster.
