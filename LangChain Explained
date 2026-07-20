@@ -1,0 +1,37 @@
+LangChain is an open-source framework that helps developers build applications powered by large language models (LLMs) like ChatGPT, Claude, or Gemini.
+
+It provides ready-made components to help an AI :
+- Use external tools (like search, calculators, or APIs).
+- Read documents and databases.
+- Remember conversation context.
+- Perform multi-step tasks.
+
+Instead of writing all of that logic yourself, LangChain gives you a structured way to connect an LLM to other systems.
+
+1- Without LangChain?
+
+You send a prompt to an AI model :
+User: "Summarize this paragraph."
+↓
+AI Model
+↓
+Summary
+
+=> This works well for simple tasks.
+
+2- With LangChain?
+
+The AI can perform a series of coordinated steps :
+User Question
+      │
+      ▼
+AI Model
+      │
+      ├── Search the web
+      ├── Read a PDF
+      ├── Query a database
+      ├── Remember previous conversation
+      ├── Call external APIs
+      └── Combine everything into an answer
+
+=> LangChain helps organize these steps.
