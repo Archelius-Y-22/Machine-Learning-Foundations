@@ -61,3 +61,14 @@ Approved = Yes
         Cluster 1
         Cluster 2
         It creates these groups itself.
+
+    c- Reinforcement Learning : 
+       Input: Current state (s)
+       Output: Action (a)
+       Feedback: Reward (r) after taking the action.
+       Goal: Learn a policy that maximizes the total future reward.
+
+       The model does not receive the correct action. It only receives a reward signal after acting.
+
+       Training loop:
+       State → Action → Reward → Update policy
