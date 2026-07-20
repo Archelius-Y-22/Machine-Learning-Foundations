@@ -1,0 +1,41 @@
+1- What is PyTorch?
+
+PyTorch is a Python Library (also called a Framework) that we add to our programming environment so our code can use it.
+Think about a calculator.
+If I ask you : What's 347 × 982?
+You could calculate it by hand, or you could use a calculator.
+=> The calculator does the hard math for you.
+=> PyTorch is like a calculator for AI.
+=> It calculates how wrong the model is, Update the weights, Repeat thousands of times.
+=> It performs all the huge mathematical calculations that an AI model needs.
+=> During training, we write something simple like : [trainer.train()]
+=> Behind that one line, PyTorch does the entire calculations.
+
+-----------------------------------------------------------------------------------------------------------------------
+PyTorch handles the huge Mathematics when fixing and improving the weights to correct the predictions out of the Model.
+-----------------------------------------------------------------------------------------------------------------------
+
+2- Installing PyTorch?
+
+After installing PyTorch : [pip install torch] => [pip] is Python's tool for installing libraries.
+We can write : [import torch].
+Now Python has new abilities.
+
+It can :
+
+- Create AI models.
+- Store model weights.
+- Perform the math needed for training.
+- Use your GPU.
+
+3- When and How to use PyTorch?
+
+We write : [trainer.train()].
+
+The chain is :
+
+- You tell Hugging Face: "Train this model."
+- Hugging Face uses PyTorch.
+- PyTorch does the mathematical calculations.
+- GPU performs those calculations quickly.
+- The model's weights get updated.
