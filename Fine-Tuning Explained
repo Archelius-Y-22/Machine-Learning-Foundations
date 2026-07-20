@@ -1,0 +1,53 @@
+1- What is Fine-Tuning? 
+
+Fine-tuning means :
+Taking an already trained AI Model and giving it extra training for a specific job.
+We are not creating a new AI from zero.
+We are taking an existing smart Model (Llama 2) and making it specialized.
+
+2- How did we Fine-Tuned Llama 2?
+
+Original Llama 2 :
+"I understand language and general information."
+We give it cybersecurity examples from CIC-IDS2017 :
+
+Example :
+Network traffic :
+Protocol: TCP
+Packets: 5000
+Duration: 0.1 seconds
+Answer :
+DDoS attack
+
+Another example :
+Network traffic :
+Protocol: TCP
+Packets: 20
+Duration: 5 seconds
+Answer :
+Normal traffic
+
+We repeat this with many examples.
+The model starts learning.
+
+3- What changes during Fine-Tuning?
+
+The original Llama 2 has billions of internal numbers (Weights).
+
+During fine-tuning :
+
+Before :
+Llama 2
+(weights)
+↓
+General knowledge
+
+After :
+Llama 2
+(weights slightly adjusted)
++
+Cybersecurity examples
+↓
+Better at detecting attacks
+
+=> The model's knowledge is adjusted to become better at your specific task.
