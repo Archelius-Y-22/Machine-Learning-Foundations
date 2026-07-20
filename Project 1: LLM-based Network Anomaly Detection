@@ -293,4 +293,31 @@ To train a Model and feed it Data, we first do those steps, in our case we do us
     => PyTorch = Heavy Calculations (Study + Learn + Calculations).
     => Hugging Face & PyTorch are complementary.
 
-    
+
+9- Complete WorkFlow : 
+
+1. Get Llama 2
+From Hugging Face :
+Download Llama 2
+↓
+2. Prepare your data
+Example :
+Traffic (Features) :
+- TCP
+- 500 packets
+- Large data transfer
+Answer (Label) :
+DDoS
+↓
+3. Use Hugging Face Transformers
+It prepares Llama 2 for training.
+↓
+4. PyTorch trains it
+It changes the model's weights.
+↓
+5. You get :
+Original Llama 2
++
+Cybersecurity training
+=
+Llama 2 specialized for detecting attacks.
