@@ -1,0 +1,291 @@
+Step 1: Understanding the Problem:
+The goal of the project was to detect malicious network traffic using a fine-tuned Llama 2 model.
+
+1- Malicious network traffic (Some of that data is dangerous) : 
+- It could be hackers trying to break into a system.
+- Spread malware.
+- Steal information. 
+=> This is called malicious traffic.
+
+2- Llama 2 model: Llama 2 is an AI language model developed by Meta. 
+While it's mainly designed to understand and generate text.
+It can also be adapted to analyze other kinds of information, such as descriptions or logs of network activity.
+
+3- Fine-tuned: 
+Llama 2 is already a pre-trained AI model already knows a lot from general training by Meta.
+Fine-tuning means giving it additional training on a specific type of data so it becomes better at one particular task. 
+In this case, it was trained on examples of normal and malicious network traffic.
+
+-------------------------------------------------------------------------------------------------------
+The main goal of the Project is : 
+- To train an AI Model (Llama 2) to analyse Network Activity and flag anything that appears suspicious.
+-------------------------------------------------------------------------------------------------------
+
+4- What is Llama 2? 
+Llama 2 is an already trained AI Model developed by Meta.
+Llama 2 already has general knowledge.
+The AI already knew many things, and we trained it further so it became better at detecting cyber threats.
+
+5- Where did we find the Data to Train the Model?
+We used the CIC-IDS2017 dataset. It's a public cybersecurity dataset created by the Canadian Institute for Cybersecurity. 
+It contains real network traffic that has already been labeled as either normal or different types of cyberattacks, 
+such as DDoS, brute-force attacks, botnets, and port scanning.
+
+=> Instead of collecting our own network traffic, 
+=> We used a trusted public dataset that researchers commonly use to train and evaluate cybersecurity models.
+
+6- What kind of Data inside this Dataset?
+The dataset is not paragraphs of text.
+Each row represents one network connection (or flow).
+
+For example:
+
+Duration	  Source IP	   Destination IP	  Packets	  Bytes	  Protocol	  Label
+0.25	      192.168.1.2	 10.0.0.1	        15	      1200	  TCP	        Benign
+0.03	      192.168.1.5	 10.0.0.8	        300	      50000	  TCP	        DDoS
+
+The important column is the Label.
+The label tells the model the correct answer.
+
+Examples:
+
+- Benign
+- DoS
+- DDoS
+- Botnet
+- Port Scan
+- Brute Force
+
+7- Describe the steps you took to make this Project?
+The first step was preparing the dataset. We cleaned the data by removing missing or duplicate values if necessary. 
+Then we selected the relevant features and labels. 
+Since the model needs structured input, we converted each network record into the format expected by the model.
+
+8- How do you feed this data into Llama 2?
+To train a Model and feed it Data, we first do those steps, in our case we do use Llama 2 :
+
+    a- Suppose we have this data :
+    
+    Traffic	                              Label
+    TCP, 500 packets, 30000 bytes	        DDoS
+    UDP, 10 packets, 500 bytes	          Benign
+    TCP, Port 80, many requests	          Web Attack
+    
+    Imagine we have 100,000 rows like this.
+
+    b- Save them in a CSV : 
+    traffic.csv
+
+    c- Load the model : 
+
+    In Python:
+    from transformers import AutoModelForCausalLM
+    model = AutoModelForCausalLM.from_pretrained("meta-llama/Llama-2-7b")
+    
+    Now Llama 2 is in our computer's memory.
+    It hasn't learned anything new yet.
+
+    d- Load the Dataset : 
+
+    import pandas as pd
+    data = pd.read_csv("traffic.csv")
+
+    Now Python has our dataset.
+
+    e- Convert each row into text : 
+
+    Llama understands text.
+    So we create prompts.
+    
+    Instead of :
+    Duration=0.2
+    Packets=300
+    Bytes=5000
+    
+    We create : 
+    Network flow :
+    Duration: 0.2 seconds
+    Packets: 300
+    Bytes: 5000
+    
+    Question:
+    Classify this traffic.
+    
+    Answer:
+    The correct answer is [DDoS].
+
+    f- Tokenization : 
+
+    Llama doesn't read English.
+    It reads numbers.
+    
+    This sentence :
+    Network flow :
+    Duration: 0.2
+    Packets: 300
+    
+    becomes something like
+    [523, 81, 15, 772, 91, 445...]
+    
+    Those numbers are called tokens.
+
+    g- Feed it to the model : 
+
+    The model receives
+    Input
+    ↓
+    Network flow :
+    Duration: 0.2
+    Packets: 300
+    Question : 
+    Classify this traffic.
+    
+    The model predicts : [Benign]
+    But the real answer is : [DDoS]
+    
+    => Oops. Wrong answer!
+
+    h- Compute the error : 
+
+    The computer literally calculates
+    Prediction = Benign
+    Correct = DDoS
+    Error = High
+
+    i- Update the weights : 
+
+    This is the magic.
+    Inside Llama there are billions of numbers.
+    
+    Something like :
+    0.3289
+    -0.777
+    4.22
+    0.0004
+    ...
+    => These are called weights.
+    
+    The training algorithm changes those numbers just a tiny bit.
+    0.3289
+    ↓
+    0.3294
+    
+    Millions of tiny adjustments happen after each batch of examples.
+    => That's what learning actually is.
+
+    j- The Model tests on another example : 
+
+    The model sees another example.
+
+    Makes another prediction. 
+    Computes another error.
+    Changes the weights again.
+    This repeats...
+
+    Example 1    
+    ↓
+    Update weights
+    ↓
+    Example 2
+    ↓
+    Update weights
+    ↓
+    Example 3
+    ↓
+    Update weights
+    ↓
+    ...
+    
+    => 100,000 examples
+    => Maybe for 3 epochs.
+    => An epoch means the model has seen the entire dataset once.
+
+    k- Who changes the weights?
+
+    A training framework does it.
+
+    For example    
+    - Hugging Face Transformers (
+    - PyTorch
+    - TensorFlow
+    
+    You usually write something like : trainer.train()
+    And behind that single line, the GPU works for hours.
+
+    => A GPU can perform many calculations at the same time, making training much faster.
+    => That's why people use GPUs to train large AI models.
+
+    l- What is Hugging Face? 
+
+    Hugging Face is the GitHub for AI Models. 
+    Developers upload AI Models there.
+
+    For example :
+
+    - Llama 2
+    - Mistral
+    - BERT
+    - GPT-J
+
+    So if someone says : "I got Llama 2 from Hugging Face."
+    They mean : "I downloaded the Model from the Hugging Face website."
+
+    m- Hugging Face Transformers (the library)?
+
+    Downloading a model manually would be painful.
+    Imagine downloading 20 GB of files and figuring out where every file goes.
+    
+    Instead you write :
+    from transformers import AutoModel
+    model = AutoModel.from_pretrained("meta-llama/Llama-2-7b")
+    
+    The Transformers library :
+    connects to the Hugging Face website,
+    downloads the files,
+    loads everything correctly,
+    prepares the model to use.
+    
+    => You don't do it yourself.
+
+    n- Hugging Face Hub?
+
+    Think of it like Google Drive.
+    It stores models.
+    Instead of photos, it stores AI models.
+
+    When you write :    
+    from_pretrained(...)
+
+    - Python contacts the Hugging Face Hub.
+    - Downloads the files.
+    - Stores them on your computer.
+
+    ----------------------------------------------------------------------------------------------
+    What is Hugging Face?
+    Hugging Face is a platform that lets developers share, download, and use pretrained AI models. 
+    It also provides software libraries that make working with those models much easier.
+    ----------------------------------------------------------------------------------------------
+    Why do people use it?
+    Imagine Meta releases Llama 2.    
+    Without Hugging Face :    
+    ❌ Find the files yourself.    
+    ❌ Download 20 GB manually.    
+    ❌ Put every file in the correct folder.    
+    ❌ Write lots of code.
+
+    With Hugging Face :    
+    model = AutoModelForCausalLM.from_pretrained("meta-llama/Llama-2-7b")
+    => Done.
+    => Everything downloads automatically.
+    ----------------------------------------------------------------------------------------------
+
+    o- What is PyTorch? 
+
+    Hugging Face doesn't train the model by itself.
+    PyTorch does the heavy calculations.
+
+    => Hugging Face = Library (Install Models and relatives Files).
+    => PyTorch = Heavy Calculations (Study + Learn + Calculations).
+    => Hugging Face & PyTorch are complementary.
+
+    
